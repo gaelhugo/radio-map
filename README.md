@@ -1,4 +1,4 @@
-# Antigravity - Interactive Weather & Radio Map
+# Radio Map
 
 A dynamic, immersive weather application that combines real-time weather data with local radio stations from around the world. Explore the globe, check the weather, and listen to the local vibe.
 
