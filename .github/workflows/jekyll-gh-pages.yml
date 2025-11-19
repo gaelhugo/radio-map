@@ -7,7 +7,7 @@ name: Deploy Vite (Vue) site to GitHub Pages
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
   pages: write
 
 jobs:
