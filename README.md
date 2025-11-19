@@ -38,7 +38,7 @@ A dynamic, immersive weather application that combines real-time weather data wi
 
     ```bash
     git clone <repository-url>
-    cd Antigravity
+    cd radio-map
     ```
 
 2.  Install dependencies:
@@ -52,41 +52,21 @@ A dynamic, immersive weather application that combines real-time weather data wi
     npm run dev
     ```
 
-## ☁️ Deployment (Google App Engine)
+## ☁️ Deployment (GitHub Pages)
 
-This project is configured for deployment on Google App Engine using the Python runtime to serve static files.
+This project is configured for automated deployment to GitHub Pages using GitHub Actions.
 
-1.  **Build the project**:
+1.  **Push to main**:
+    Any push to the `main` branch will trigger the deployment workflow.
 
-    ```bash
-    npm run build
-    ```
+2.  **Workflow**:
+    The `.github/workflows/jekyll-gh-pages.yml` workflow handles:
+    - Installing dependencies (`npm ci`)
+    - Building the project (`npm run build`)
+    - Uploading the artifact
+    - Deploying to GitHub Pages
 
-    This creates a `dist` directory with the production assets.
-
-2.  **Deploy**:
-    ```bash
-    gcloud app deploy
-    ```
-
-### Configuration (`app.yaml`)
-
-The `app.yaml` is set up to serve the `dist` folder as static assets and handle SPA routing (redirecting unknown routes to `index.html`).
-
-```yaml
-runtime: python312
-service: radiomap
-
-handlers:
-  - url: /assets
-    static_dir: dist/assets
-  - url: /(.*\.(gif|png|jpg|ico|txt))$
-    static_files: dist/\1
-    upload: dist/.*\.(gif|png|jpg|ico|txt)$
-  - url: /.*
-    static_files: dist/index.html
-    upload: dist/index.html
-```
+Ensure your repository settings are configured to deploy from **GitHub Actions** (Settings > Pages > Source).
 
 ## 📂 Project Structure
 
