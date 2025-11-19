@@ -1,0 +1,17 @@
+runtime: python312
+service: radiomap
+
+handlers:
+  # Serve all static assets directly
+  - url: /assets
+    static_dir: dist/assets
+
+  # Serve specific root files (like favicon, robots.txt)
+  - url: /(.*\.(gif|png|jpg|ico|txt))$
+    static_files: dist/\1
+    upload: dist/.*\.(gif|png|jpg|ico|txt)$
+
+  # Catch-all handler for SPA routing: serve index.html for any other route
+  - url: /.*
+    static_files: dist/index.html
+    upload: dist/index.html
