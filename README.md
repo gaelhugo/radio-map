@@ -105,3 +105,7 @@ The app features specific logic for mobile devices:
 
 - **Visual Center Offset**: On screens narrower than 768px, the "center" of the map (the crosshair) is shifted to the top 30% of the screen to accommodate the weather card at the bottom.
 - **Compact UI**: The weather card adapts its layout, font sizes, and padding to fit comfortably on small screens.
+
+## 📝 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
