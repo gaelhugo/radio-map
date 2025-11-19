@@ -243,4 +243,22 @@ button:hover {
 button:active {
     transform: scale(0.95);
 }
+
+@media (max-width: 768px) {
+    .content-overlay {
+        top: auto;
+        bottom: 1.5rem;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        transform: none;
+        width: 92%;
+        max-width: 400px;
+    }
+
+    .crosshair {
+        /* Move crosshair up significantly to avoid overlap with the card */
+        top: 30%; 
+    }
+}
 </style>

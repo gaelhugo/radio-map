@@ -470,7 +470,7 @@ watch(() => props.current.wind_direction_10m, () => {
 .play-btn {
     background: rgba(255, 255, 255, 0.2);
     border: none;
-    border-radius: 50%;
+    border-radius:999px;
     width: 36px;
     height: 36px;
     display: flex;
@@ -488,5 +488,80 @@ watch(() => props.current.wind_direction_10m, () => {
 
 .hidden-audio {
     display: none;
+}
+
+@media (max-width: 480px) {
+    .weather-card {
+        /*padding: 0.8rem 1rem;*/
+        border-radius: 16px;
+        display: flex;
+        flex-direction: column;
+        gap: 0.2rem;
+        width: calc(100% - 4rem);
+    }
+
+    .location {
+        font-size: 1rem;
+        margin-bottom: 0;
+    }
+
+    .time-info {
+        margin-bottom: 0.2rem;
+        font-size: 0.7rem;
+    }
+
+    .main-info {
+        gap: 0.5rem;
+        margin-bottom: 0;
+        /* Side by side layout for temp and icon */
+        flex-direction: row;
+    }
+
+    .temperature {
+        font-size: 2.2rem;
+    }
+
+    .icon {
+        font-size: 2.2rem;
+    }
+
+    .condition {
+        font-size: 0.9rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .details {
+        padding-top: 0.5rem;
+        margin-bottom: 0.2rem;
+    }
+
+    .value {
+        font-size: 0.8rem;
+    }
+
+    .label {
+        font-size: 0.6rem;
+    }
+
+    .radio-player {
+        margin-top: 0.5rem;
+        padding-top: 0.5rem;
+    }
+    
+    .station-name {
+        font-size: 0.8rem;
+        max-width: 150px;
+    }
+
+    .play-btn {
+        width: 32px;
+        height: 32px;
+        min-width: 32px; /* Prevent shrinking */
+        min-height: 32px;
+        font-size: 0.8rem;
+        flex-shrink: 0;
+        aspect-ratio: 1;
+        border-radius: 9999px;
+    }
 }
 </style>
